@@ -5,9 +5,7 @@
 
 <h1>To Do List for {{month}}/{{day}}/{{year}}</h1>
 <h3>{{currentTask}}</h3>
-<ul>
-  <li [class]="priorityColor(currentTask)"  *ngFor="let currentTask of tasks">{{currentTask.description}} <button (click)="editTask(currentTask)">Edit!</button></li>
-</ul>
+<app-task-list [childTaskList]="masterTaskList" (clickSender)="editTask($event)"></app-task-list>
 <div *ngIf="selectedTask">
   <h3>{{selectedTask.description}}</h3>
   <p>Task Complete? {{selectedTask.done}}</p>
@@ -20,4 +18,5 @@
   <input type="radio" [(ngModel)]="selectedTask.priority" value="2">2 (Medium Priority)<br>
   <input type="radio" [(ngModel)]="selectedTask.priority" value="3">3 (High Priority)
   <button (click)="finishedEditing()">Done</button>
+  <app-edit-task [childSelectedTask]="selectedTask"></app-edit-task>
 </div>

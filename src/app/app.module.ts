@@ -1,15 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { ModelsComponent } from './models/models.component';
 import { FormsModule }  from '@angular/forms';
+import { TaskListComponent } from './task-list/task-list.component';
+import { EditTaskComponent } from './edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    ModelsComponent
+    TaskListComponent,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,
