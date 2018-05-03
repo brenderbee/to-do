@@ -10,7 +10,7 @@ export class EditTaskComponent {
   @Input() childSelectedTask: Task;
   @Output() clickedDone = new EventEmitter();
 
-  finishedEditing() {
+  clickedFinishedEditing() {
     this.clickedDone.emit();
   }
 
